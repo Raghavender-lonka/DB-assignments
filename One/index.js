@@ -13,40 +13,40 @@ mongoClient.connect(connectionString, async (err, db) => {
 
   console.log("Connected to Mongo Database")
 
-  //   const inserting = await database
-  //     .collection("employee")
-  //     .insertMany(employeesData)
+  const inserting = await database
+    .collection("employee")
+    .insertMany(employeesData)
 
-  //   console.log(inserting)
+  console.log(inserting)
 
   const finding = await dbCollection.find().toArray()
   console.log(finding)
 
-  //   const findingWithSalary = await dbCollection
-  //     .find({ salary: { $gt: "30000" } })
-  //     .toArray()
-  //   console.log(findingWithSalary)
+  const findingWithSalary = await dbCollection
+    .find({ salary: { $gt: "30000" } })
+    .toArray()
+  console.log(findingWithSalary)
 
-  //   const findingWithExp = await dbCollection
-  //     .find({ overallExp: { $gt: "1" } })
-  //     .toArray()
-  //   console.log(findingWithExp)
+  const findingWithExp = await dbCollection
+    .find({ overallExp: { $gt: "1" } })
+    .toArray()
+  console.log(findingWithExp)
 
-  //   const findingWithTwoConditions = await dbCollection
-  //     .find({
-  //       $and: [{ yearGrad: { $gt: "2015" } }, { overallExp: { $gt: "1" } }],
-  //     })
-  //     .toArray()
-  //   console.log(findingWithTwoConditions, "findingwithtwoconditions")
+  const findingWithTwoConditions = await dbCollection
+    .find({
+      $and: [{ yearGrad: { $gt: "2015" } }, { overallExp: { $gt: "1" } }],
+    })
+    .toArray()
+  console.log(findingWithTwoConditions, "findingwithtwoconditions")
 
-  //   const updatingSalary = await dbCollection.updateMany(
-  //     { salary: { $gt: "30000" } },
-  //     { $set: { salary: "28000" } }
-  //   )
-  //   console.log(updatingSalary)
+  const updatingSalary = await dbCollection.updateMany(
+    { salary: { $gt: "30000" } },
+    { $set: { salary: "28000" } }
+  )
+  console.log(updatingSalary)
 
-  //   const deleteWithLastCompany = await dbCollection.deleteMany({
-  //     lastCompany: "Y",
-  //   })
-  //   console.log(deleteWithLastCompany)
+  const deleteWithLastCompany = await dbCollection.deleteMany({
+    lastCompany: "Y",
+  })
+  console.log(deleteWithLastCompany)
 })
