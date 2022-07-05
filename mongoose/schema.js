@@ -1,15 +1,27 @@
 const mongoose = require("mongoose")
 
 const employeeShema = mongoose.Schema({
-  firstName: String,
-  lastName: String,
-  salary: String,
-  department: String,
+  firstName: {
+    type: String,
+    required: true,
+  },
+  lastName: {
+    type: String,
+    required: true,
+  },
+  salary: {
+    type: Number,
+    required: true,
+  },
+  department: {
+    type: String,
+    required: true,
+  },
   lastCompany: String,
-  lastSalary: String,
-  overallExp: String,
-  contactInfo: String,
-  yearGrad: String,
+  lastSalary: Number,
+  overallExp: Number,
+  contactInfo: Number,
+  yearGrad: Number,
   gradStream: String,
 })
 
