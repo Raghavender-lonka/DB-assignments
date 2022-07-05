@@ -65,7 +65,7 @@ const updatingWithTwoConditonsMongoose = async () => {
     console.error("error while updating the record", e)
   }
 }
-const deletingWithTwoConditonsMongoose = async () => {
+const deletingWithMongoose = async () => {
   try {
     await connectionWithMongoose()
     const result = await employeeModel.deleteMany({
